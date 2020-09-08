@@ -11,25 +11,16 @@ app.use(bodyParser.json());
 
 async function getToken(authString) {
   let tokenUrl = "https://accounts.spotify.com/api/token";
-  // let tokenHeaderOptions = {
-  //   "method": "POST",
-  //   "headers": {
-  //     'Authorization': `Basic ${authString}`,
-  //     'Content-Type': 'application/x-www-form-urlencoded',
-  //   },
-  //   "body": {
-  //     "grant_type": "client_credentials"
-  //   }
-  // }
-
-  let response = await fetch(tokenUrl, {
-    method: "POST",
-    headers: {
+  let tokenHeaderOptions = {
+    "method": "POST",
+    "headers": {
       'Authorization': `Basic ${authString}`,
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: "grant_type=client_credentials"
-  });
+    "body": "grant_type=client_credentials"
+  }
+
+  let response = await fetch(tokenUrl, tokenHeaderOptions);
   return response.json();
 }
 

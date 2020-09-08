@@ -2,6 +2,7 @@
   "name": "react-workshop-spotify-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5678",
   "scripts": {
     "start": "concurrently -p \"[{name}]\" -n \"CLIENT,SERVER\" -c \"bgBlue.bold,bgMagenta.bold,bgGreen.bold\" \"yarn run start:client\" \"yarn run start:server\"",
     "start:client": "react-scripts start",
@@ -35,7 +36,7 @@
     "react-scripts": "2.1.8",
     "react-spring": "^9.0.0-beta.6",
     "redux": "^4.0.5",
-    "styled-components": "^4.2.0"
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",

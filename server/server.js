@@ -36,11 +36,9 @@ app.get('/spotify_access_token', (req, res, next) => {
 
   getToken(authString)
     .then(data => {
-      console.log(data)
+      res.send(data);
     });
 
-  // TODO: use authString in a request to Spotify!
-  res.send({ todo: true });
 });
 
 app.listen(port, function (error) {
